@@ -3,26 +3,18 @@
 {% load static %}
 {% block content %}
 
-<head>
-  <style>
-    .index-page .header {
-      background-color: #3d4d6a;
-    }
-  </style>
-</head>
-
-  <main class="main" style="margin-top: 80px;">
+  <main class="main">
 
     <!-- Page Title -->
     <div class="page-title" data-aos="fade">
       <div class="container">
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="{% url 'store' %}">Home</a></li>
-            <li class="current">Project Details</li>
+            <li><a href="{% url 'store' %}">الصفحة الرئيسية</a></li>
+            <li class="current">تفاصيل الدورة</li>
           </ol>
         </nav>
-        <h1>Project Details</h1>
+        <h1>تفاصيل الدورة</h1>
       </div>
     </div>
     <!-- End Page Title -->
@@ -67,10 +59,6 @@
                   <img src="{% static projects.image.url %}" alt="">
                 </div>
 
-                <div class="swiper-slide">
-                  <img src="{% static projects.image.url %}" alt="">
-                </div>
-
               </div>
               <div class="swiper-pagination"></div>
             </div>
@@ -78,18 +66,22 @@
 
           <div class="col-lg-4">
             <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h3>Project information</h3>
+              <h3>معلومات الدورة</h3>
               <ul>
-                <li><strong>Category</strong>: {{projects.service}}</li>
-                <li><strong>Title</strong>: {{projects.title}}</li>
-                <li><strong>Project Description</strong>: {{projects.description}}</li>
+                <li><strong>الفئة</strong>: {{projects.service}}</li>
+                <li><strong>العنوان</strong>: {{projects.title}}</li>
+                <li><strong>وصف الدورة</strong>: {{projects.description}}</li>
               </ul>
             </div>
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>Exercitationem repudiandae officiis neque suscipit</h2>
+              <h2>{{projects.description}}</h2>
               <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                نوفر لكم دورة في مجال البرمجة التي باتت ذات أهمية بالغة وذات طلب كبير في عصر التكنولوجيا تحت إشراف كل من الأستاذ وحيد (للذكور) والأستاذة سعاد (للإناث) 
+نقدم دورات في كل مجالات البرمجة.
               </p>
+            </div>
+            <div class="reserve" align="center" style="margin-top: 50px;">
+              <a href="{% url 'reserve' projects.id  %}" class="color-white">احجز الآن</a>
             </div>
           </div>
 

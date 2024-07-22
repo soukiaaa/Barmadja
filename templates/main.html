@@ -16,9 +16,8 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    
   <!-- Vendor CSS Files -->
   <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
   <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
@@ -29,7 +28,7 @@
   <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/styles.css' %}" rel="stylesheet">
 
   <style>
     .carousel-item1{
@@ -70,8 +69,7 @@
     <div class="container d-flex align-items-center">
 
       <div class="logo ms-auto">
-        <h1><a href="index.html">خدمات البرمجة</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
+        <h1><a href="{% url 'store' %}">خدمات البرمجة</a></h1>
         <!-- <a href="index.html"><img src="{% static 'assets/img/logo.png' %}" alt="" class="img-fluid"></a>-->
       </div>
 
@@ -79,8 +77,6 @@
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">الرئيسية</a></li>
           <li><a class="nav-link scrollto" href="#about">من نحن</a></li>
-          <li><a class="nav-link scrollto" href="#portfolio">الدورات</a></li>
-          <li><a class="nav-link scrollto" href="#team">الفريق</a></li>
           <li class="dropdown"><a href="#services"><span>خدماتنا</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               {% for s in services %}
@@ -88,6 +84,8 @@
               {% endfor %}
             </ul>
           </li>
+          <li><a class="nav-link scrollto" href="#portfolio">الدورات</a></li>
+          <li><a class="nav-link scrollto" href="#team">الفريق</a></li>
           <li><a class="nav-link scrollto" href="#contact">تواصل معنا</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -95,65 +93,6 @@
 
     </div>
   </header><!-- End Header -->
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero">
-    <div class="hero-container">
-      <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
-
-        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
-
-        <div class="carousel-inner" role="listbox">
-
-          <!-- Slide 1 -->
-          <div class="carousel-item carousel-item1 active">
-            <div class="carousel-container">
-              <div class="carousel-content container">
-                <h2 class="animate__animated animate__fadeInDown">مرحبا بكم <span>خدمات البرمجة</span></h2>
-                <p class="animate__animated animate__fadeInUp">نوفر لكم دورة في مجال البرمجة التي باتت ذات أهمية بالغة وذات طلب كبير في عصر التكنولوجيا.</p>
-                <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">اقرأ المزيد</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 2 -->
-          <div class="carousel-item carousel-item2">
-            <div class="carousel-container">
-              <div class="carousel-content container">
-                <h2 class="animate__animated animate__fadeInDown">فريق العمل</h2>
-                <p class="animate__animated animate__fadeInUp">تحت إشراف كل من الأستاذ وحيد (للذكور) والأستاذة سعاد (للإناث) .</p>
-                <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">اقرأ المزيد</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 3 -->
-          <div class="carousel-item carousel-item3">
-            <div class="carousel-container">
-              <div class="carousel-content container">
-                <h2 class="animate__animated animate__fadeInDown">نقدم دورات في كل مجالات البرمجة</h2>
-                <p class="animate__animated animate__fadeInUp">تعلم python
-                  تعلم Bureautique
-                  انشاء مواقع ويب Frontend
-                  برمجة مواقع ويب Backend
-                  تعلم الشبكات réseaux.</p>
-                <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">اقرأ المزيد</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-        </a>
-        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-        </a>
-
-      </div>
-    </div>
-  </section><!-- End Hero -->
 
   {% block content %}
 

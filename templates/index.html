@@ -2,6 +2,65 @@
 {% load static %}
   {% block content %}
 
+ <!-- ======= Hero Section ======= -->
+ <section id="hero">
+  <div class="hero-container">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+      <div class="carousel-inner" role="listbox">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item carousel-item1 active">
+          <div class="carousel-container">
+            <div class="carousel-content container">
+              <h2 class="animate__animated animate__fadeInDown">مرحبا بكم <span>خدمات البرمجة</span></h2>
+              <p class="animate__animated animate__fadeInUp">نوفر لكم دورة في مجال البرمجة التي باتت ذات أهمية بالغة وذات طلب كبير في عصر التكنولوجيا.</p>
+              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">اقرأ المزيد</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item carousel-item2">
+          <div class="carousel-container">
+            <div class="carousel-content container">
+              <h2 class="animate__animated animate__fadeInDown">فريق العمل</h2>
+              <p class="animate__animated animate__fadeInUp">تحت إشراف كل من الأستاذ وحيد (للذكور) والأستاذة سعاد (للإناث) .</p>
+              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">اقرأ المزيد</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item carousel-item3">
+          <div class="carousel-container">
+            <div class="carousel-content container">
+              <h2 class="animate__animated animate__fadeInDown">نقدم دورات في كل مجالات البرمجة</h2>
+              <p class="animate__animated animate__fadeInUp">تعلم python
+                تعلم Bureautique
+                انشاء مواقع ويب Frontend
+                برمجة مواقع ويب Backend
+                تعلم الشبكات réseaux.</p>
+              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">اقرأ المزيد</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+      </a>
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+      </a>
+
+    </div>
+  </div>
+</section><!-- End Hero -->
+
 <main id="main">
 
   <!-- ======= About Us Section ======= -->
@@ -17,20 +76,28 @@
         <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
 
           <div class="section-title">
-            <h2>About Us</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.</p>
+            <h2>معلومات عنا</h2>
+            <p>نقدم دورات في كل مجالات البرمجة 
+              تعلم python
+              تعلم Bureautique
+              انشاء مواقع ويب Frontend
+              برمجة مواقع ويب Backend
+              تعلم الشبكات réseaux
+              Backend
+              development web
+              Frontend لمزيد من التفاصيل يمكنكم مراسلتنا.</p>
           </div>
 
           <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
             <div class="icon"><i class="bx bx-fingerprint"></i></div>
-            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+            <h4 class="title"><a href="">نحن في خدمتكم</a></h4>
+            <p class="description">الدورة عند بعد ولمدة شهر  والسعر حسب تخصص الذي تختار أن تتعلمه وتتقنه </p>
           </div>
 
           <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
             <div class="icon"><i class="bx bx-gift"></i></div>
-            <h4 class="title"><a href="">Nemo Enim</a></h4>
-            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+            <h4 class="title"><a href="">تطوير مهارات</a></h4>
+            <p class="description">طور مهاراتك بالتسجيل عبر منصتنا أونلاين.</p>
           </div>
 
         </div>
@@ -112,14 +179,14 @@
     <div class="container" data-aos="fade-up" data-aos-delay="100">
 
       <div class="section-title">
-        <h2>Projects</h2>
-        <p>List of projects for selling</p>
+        <h2>الدورات</h2>
+        <p>نقدم دورات في كل مجالات البرمجة </p>
       </div>
 
       <div class="row">
         <div class="col-lg-12">
           <ul id="portfolio-flters">
-            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter="*" class="filter-active">جميع</li>
             {% for s in services %}
             <li data-filter=".{{s.designation}}">{{s.designation}}</li>
             {% endfor %}
