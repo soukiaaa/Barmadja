@@ -1,0 +1,63 @@
+{% extends 'main.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% block content %}
+<head>
+	<link rel="stylesheet" href="{% static 'assets/css/stylersv.css' %}">
+</head>
+	{% if messages %}
+		{% for message in messages %}
+			<div class="alert {{ message.tags }}" id="msg" role="alert">
+				<script>
+					alert('{{ message }}');
+				</script>
+			</div>
+		{% endfor %}
+	{% endif %}
+	<img class="wave" src="{% static 'assets/img/img/wave.png' %}">
+	<div class="container .cont">
+		<div class="login-content">
+			<form method="post">
+				{% csrf_token %}
+				<h2 class="title">التسجــــــيل</h2>
+           		<div class="input-div one">
+           		   <div class="icon">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+						{% render_field registerForm.name id="name" class="input" placeholder="الاسم و اللقب" %}
+           		   </div>
+           		</div>
+           		<!-- <div class="input-div pass">
+           		   <div class="icon"> 
+           		    	<i class="fas fa-date"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<input type="date" class="input" placeholder="تاريخ الميلاد">
+            	   </div>
+            	</div> -->
+				<div class="input-div pass">
+					<div class="icon"> 
+						 <i class="fas fa-phone"></i>
+					</div>
+					<div class="div">
+						 {% render_field registerForm.phone id="phone" class="input" placeholder="رقم الهاتف" %}
+					</div>
+			  	</div>
+			  	<div class="input-div pass">
+					{% render_field registerForm.isregistred id="isregistred" %}
+					<a href="#" style="margin-right:40px;">أنت مسجل من قبل؟</a>
+				</div>
+				<div class="input-div pass">
+					<a href="#">الدورة</a>
+					{% render_field registerForm.project id="project" style="width:70%; margin-right:40px;" %}
+				</div>
+				
+            	<input type="submit" class="btn" value="ارسال">
+            </form>
+        </div>
+		<div class="img">
+			<img src="{% static 'assets/img/img/bg.png' %}">
+		</div>
+    </div>
+{% endblock content %}

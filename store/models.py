@@ -13,11 +13,21 @@ class service(models.Model):
     def __str__(self):
         return self.designation  
     
+class category(models.Model):
+    designation = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='images/',null=True,blank=True)
+    description = models.CharField(max_length=200)
+
+    class Meta:
+        ordering = ['-designation']
+    def __str__(self):
+        return self.designation 
+
 class project(models.Model):
     title = models.CharField(max_length=100)
     image = models.ImageField(upload_to='images/',null=True,blank=True)
     description = models.CharField(max_length=200)
-    service = models.ForeignKey(service, on_delete=models.PROTECT) 
+    service = models.ForeignKey(category, on_delete=models.PROTECT) 
 
     class Meta:
         ordering = ['-title']
@@ -26,9 +36,9 @@ class project(models.Model):
     
 class client(models.Model):
     name = models.CharField(max_length=100)
-    adresse = models.CharField(max_length=100)
-    telephone = models.CharField(max_length=20)
-    user = models.ForeignKey(User, on_delete=models.PROTECT)
+    phone = models.CharField(max_length=20)
+    isregistred = models.BooleanField(default=False)
+    project = models.ForeignKey(project, on_delete=models.PROTECT) 
     datec = models.DateTimeField(auto_now_add=True)
     class Meta:
         ordering = ['-name']  

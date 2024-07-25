@@ -10,4 +10,12 @@ class ProjectAdmin(admin.ModelAdmin):
     pass
 admin.site.register(project, ProjectAdmin)
 
+class ClientAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(client, ClientAdmin)
+
+class CategoryAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(category, CategoryAdmin)
+
 

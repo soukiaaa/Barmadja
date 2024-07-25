@@ -116,7 +116,7 @@
           <div class="count-box">
             <i class="bi bi-simple-smile" style="color: #20b38e;"></i>
             <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Happy Clients</p>
+            <p>عملاء</p>
           </div>
         </div>
 
@@ -124,7 +124,7 @@
           <div class="count-box">
             <i class="bi bi-document-folder" style="color: #c042ff;"></i>
             <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Projects</p>
+            <p>مشاريع</p>
           </div>
         </div>
 
@@ -132,7 +132,7 @@
           <div class="count-box">
             <i class="bi bi-live-support" style="color: #46d1ff;"></i>
             <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Hours Of Support</p>
+            <p>ساعات من الدعم</p>
           </div>
         </div>
 
@@ -140,7 +140,7 @@
           <div class="count-box">
             <i class="bi bi-users-alt-5" style="color: #ffb459;"></i>
             <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Hard Workers</p>
+            <p>دورات</p>
           </div>
         </div>
 
@@ -154,17 +154,17 @@
     <div class="container" data-aos="fade-up">
 
       <div class="section-title">
-        <h2>Services</h2>
+        <h2>الخدمات</h2>
       </div>
-
+      
       <div class="row">
         {% for s in services %}
         <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
           
           <div class="service-item position-relative m-2">
             <div class="icon"><img width="200" height="120" src="{% static s.image.url %}" alt=""></div>
-            <h4 align="center"><a href="" class="stretched-link">{{ s.designation }}</a></h4>
-            <p>{{ s.description }}</p>
+            <h4 align="center"><a href="" class="stretched-link">{{ s.designation|cut:'_' }}</a></h4>
+            <!-- <p>{{ s.description }}</p> -->
           </div>
           
         </div>
@@ -187,7 +187,7 @@
         <div class="col-lg-12">
           <ul id="portfolio-flters">
             <li data-filter="*" class="filter-active">جميع</li>
-            {% for s in services %}
+            {% for s in categories %}
             <li data-filter=".{{s.designation}}">{{s.designation}}</li>
             {% endfor %}
           </ul>
@@ -222,7 +222,7 @@
     <div class="container" data-aos="fade-up">
 
       <div class="section-title">
-        <h2>Our Team</h2>
+        <h2>فريقنا</h2>
         <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.</p>
       </div>
 
@@ -302,7 +302,7 @@
     <div class="container" data-aos="fade-up">
 
       <div class="section-title">
-        <h2>Contact Us</h2>
+        <h2>تواصل معنا</h2>
       </div>
 
       <div class="row">
@@ -310,7 +310,7 @@
         <div class="col-lg-6 d-flex" data-aos="fade-up">
           <div class="info-box">
             <i class="bx bx-map"></i>
-            <h3>Our Address</h3>
+            <h3>العنوان</h3>
             <p>A108 Adam Street, New York, NY 535022</p>
           </div>
         </div>
@@ -318,7 +318,7 @@
         <div class="col-lg-3 d-flex" data-aos="fade-up" data-aos-delay="100">
           <div class="info-box">
             <i class="bx bx-envelope"></i>
-            <h3>Email Us</h3>
+            <h3>البريد الإلكتروني</h3>
             <p>info@example.com<br>contact@example.com</p>
           </div>
         </div>
@@ -326,7 +326,7 @@
         <div class="col-lg-3 d-flex" data-aos="fade-up" data-aos-delay="200">
           <div class="info-box ">
             <i class="bx bx-phone-call"></i>
-            <h3>Call Us</h3>
+            <h3>اتصل بنا</h3>
             <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
           </div>
         </div>
@@ -352,7 +352,7 @@
               <div class="error-message"></div>
               <div class="sent-message">Your message has been sent. Thank you!</div>
             </div>
-            <div class="text-center"><button type="submit">Send Message</button></div>
+            <div class="text-center"><button type="submit">أرسل رسالة</button></div>
           </form>
         </div>
 
