@@ -1,12 +1,19 @@
 from django.db import models
 from django import forms
 from django.contrib.auth.models import User
+from django.utils.html import format_html
+from django.template.defaultfilters import truncatechars
 
 # Create your models here.
 class service(models.Model):
     designation = models.CharField(max_length=100)
     image = models.ImageField(upload_to='images/',null=True,blank=True)
     description = models.CharField(max_length=200)
+
+    def admin_photo(self):
+        return format_html('<img src="{}" width="100" />'.format(self.image.url))
+    admin_photo.short_description = "image"
+    admin_photo.allow_tags = True
 
     class Meta:
         ordering = ['-designation']

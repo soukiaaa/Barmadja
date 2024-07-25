@@ -362,5 +362,13 @@
   </section><!-- End Contact Us Section -->
 
 </main><!-- End #main -->
-
+{% if messages %}
+		{% for message in messages %}
+			<div class="alert {{ message.tags }}" id="msg" role="alert">
+				<script>
+					alert('{{ message }}');
+				</script>
+			</div>
+		{% endfor %}
+	{% endif %}
 {% endblock content %}
