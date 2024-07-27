@@ -163,7 +163,7 @@
           
           <div class="service-item position-relative m-2">
             <div class="icon"><img width="200" height="120" src="{% static s.image.url %}" alt=""></div>
-            <h4 align="center"><a href="" class="stretched-link">{{ s.designation|cut:'_' }}</a></h4>
+            <h4 align="center"><a href="{% url 'service' s.id %}" class="stretched-link">{{ s.designation|cut:'_' }}</a></h4>
             <!-- <p>{{ s.description }}</p> -->
           </div>
           

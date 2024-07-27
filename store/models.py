@@ -9,12 +9,7 @@ class service(models.Model):
     designation = models.CharField(max_length=100)
     image = models.ImageField(upload_to='images/',null=True,blank=True)
     description = models.CharField(max_length=200)
-
-    def admin_photo(self):
-        return format_html('<img src="{}" width="100" />'.format(self.image.url))
-    admin_photo.short_description = "image"
-    admin_photo.allow_tags = True
-
+    
     class Meta:
         ordering = ['-designation']
     def __str__(self):
