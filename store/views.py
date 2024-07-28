@@ -36,3 +36,7 @@ def reserver(request,pk):
         else:
              messages.success(request, 'لم يتم التسجيل بنجاح')
     return render(request, 'login2022end/index.html', {'registerForm':registerForm})
+
+def view_service(request,pk):
+    services=service.objects.get(id=pk)
+    return render(request, 'view_service.html', {'vservices':services})
