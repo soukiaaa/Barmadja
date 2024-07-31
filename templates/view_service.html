@@ -2,60 +2,80 @@
 {% load widget_tweaks %}
 {% load static %}
 {% block content %}
-
-  <main class="main row">
-
+<head>
+  <style>
+    .btn{
+	display: block;
+	width: 100%;
+	height: 50px;
+	border-radius: 25px;
+	outline: none;
+	border: none;
+    background-image: linear-gradient(to right, #1b5369, #3d9ab8, #27434e);
+	background-size: 200%;
+	font-size: 1.2rem;
+	color: #fff;
+	font-family: 'Poppins', sans-serif;
+	text-transform: uppercase;
+	margin: 1rem 0;
+	cursor: pointer;
+	transition: .5s;
+}
+.btn:hover{
+	background-position: right;
+}
+  </style>
+</head>
+  <main class="main row m-4">
+    <nav class="breadcrumbs">
+      <ol>
+        <li><a href="{% url 'store' %}">الصفحة الرئيسية</a></li>
+        <li class="current">تفاصيل الخدمة</li>
+      </ol>
+    </nav>
     <!-- Page Title -->
     <div class="page-title col-lg-6 col-md-12" data-aos="fade">
       <div class="container">
-        <nav class="breadcrumbs">
-          <ol>
-            <li><a href="{% url 'store' %}">الصفحة الرئيسية</a></li>
-            <li class="current">تفاصيل الخدمة</li>
-          </ol>
-        </nav>
+        
         <h1>الحجز في الخدمة {{vservices.designation}}</h1>
-        <p>{{vservices.description}}</p>
-        <img src="{{vservices.image.url}}" width="500" alt="">
+        <br>
+        <h2><a href="#">{{vservices.description}}</a></h2>
+        <img src="{{vservices.image.url}}" width="500" style="height: 70vh;" alt="">
       </div>
     </div>
     <!-- End Page Title -->
-    <div align="center" class="col-lg-6 col-md-12">
+    <div align="center" class="col-lg-6 col-md-12 ps-5 pe-5" style="border-radius: 50px; height: 77vh; margin-top: 90px; background-color: #5c768d; color: white;">
         <div class="login-content">
-          <form method="post">
-            {% csrf_token %}
-            <h2 class="title">التسجــــــيل</h2>
-                   <div class="input-div one">
-                      <div class="icon">
-                          <i class="fas fa-user"></i>
-                      </div>
-                      <div class="div">
-                {% render_field registerForm.name id="name" class="input" placeholder="الاسم و اللقب" %}
-                      </div>
-                   </div>
-            <div class="input-div pass">
-              <div class="icon"> 
-                 <i class="fas fa-phone"></i>
+          <form method="post" class="p-4">
+              {% csrf_token %}
+              <h2 class="title">التسجــــــيل</h2>
+              <div class="input-div d-grid gap-3 m-1">
+                  {% render_field serviceForm.name class="input" id="name" placeholder="الاسم و اللقب" %}
               </div>
-              <div class="div">
-                 {% render_field registerForm.phone id="phone" class="input" placeholder="رقم الهاتف" %}
+              <div class="input-div d-grid gap-3 m-1">
+                  {% render_field serviceForm.phone class="input" id="phone" placeholder="رقم الهاتف" %}
               </div>
+              <div class="input-div d-grid gap-3 m-1">
+                {% render_field serviceForm.service class="input" id="service" %}
               </div>
-              <div class="input-div pass">
-              {% render_field registerForm.isregistred id="isregistred" %}
-              <a href="#" style="margin-right:40px;">أنت مسجل من قبل؟</a>
-            </div>
-            <div class="input-div pass">
-              <a href="#">الدورة</a>
-              {% render_field registerForm.project id="project" style="width:70%; margin-right:40px;" %}
-            </div>
-            
-                  <input type="submit" class="btn" value="ارسال">
+              <div class="input-div d-grid gap-3 m-1">
+                {% render_field serviceForm.description class="input" placeholder="التفاصيل" %}
+              </div>              
+              <input type="submit" class="btn" value="ارسال">
           </form>
         </div>
     </div>
-
   </main>
+
+  {% if messages %}
+		{% for message in messages %}
+			<div class="alert {{ message.tags }}" id="msg" role="alert">
+				<script>
+					alert('{{ message }}');
+				</script>
+			</div>
+		{% endfor %}
+	{% endif %}
 {% endblock content %}
         
 
