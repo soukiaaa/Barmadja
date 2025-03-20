@@ -42,11 +42,20 @@ class projects(models.Model):
     image = models.ImageField(upload_to='images/',null=True,blank=True)
     description = models.CharField(max_length=200) 
     price = models.FloatField() 
+    nbrView = models.IntegerField(default=0, null=True, blank=True)
 
     class Meta:
         ordering = ['-title']
     def __str__(self):
-        return self.title  
+        return self.title 
+
+class comment(models.Model):
+    datec = models.DateTimeField(auto_now_add=True)
+    proj = models.ForeignKey(projects, on_delete=models.CASCADE) 
+    content = models.TextField()
+
+    def __str__(self):
+        return self.content 
     
 class client(models.Model):
     name = models.CharField(max_length=100)
@@ -63,10 +72,33 @@ class client(models.Model):
     def __int__(self):
         return self.name
     
+TYPE_CHOICE = (
+    ('Etudiant','Etudiant'),
+    ('Formateur', 'Formateur'),
+    ('Développeur', 'Développeur'),
+    ('Demandeur', 'Demandeur'),
+    ('Autre','Autre'),
+)
+
 class customer(models.Model):
     name = models.CharField(max_length=100)
     phone = models.CharField(max_length=20)
-    service = models.ForeignKey(service, on_delete=models.PROTECT) 
+    service = models.ForeignKey(service, on_delete=models.PROTECT)
+    type = models.CharField(max_length=50, choices=TYPE_CHOICE, default='Etudiant')
+    datec = models.DateTimeField(auto_now_add=True)
+    description = models.TextField()
+
+    class Meta:
+        ordering = ['-name']  
+    def __str__(self):
+        return self.name
+    def __int__(self):
+        return self.name
+    
+class customerPrj(models.Model):
+    name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=20)
+    prj = models.ForeignKey(projects, on_delete=models.PROTECT) 
     datec = models.DateTimeField(auto_now_add=True)
     description = models.TextField()
 

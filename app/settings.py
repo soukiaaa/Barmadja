@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'widget_tweaks',
     'store',
+    'hitcount',
 ]
 
 MIDDLEWARE = [

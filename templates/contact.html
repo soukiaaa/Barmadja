@@ -1,0 +1,101 @@
+{% extends 'main.html' %}
+{% load static %}
+  {% block content %}
+
+<!-- ======= Contact Us Section ======= -->
+<section id="contact" class="contact">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>تواصل معنا</h2>
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-6 d-flex" data-aos="fade-up">
+          <div class="info-box">
+            <i class="bx bx-map"></i>
+            <h3>العنوان</h3>
+            <p>A108 Adam Street, New York, NY 535022</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 d-flex" data-aos="fade-up" data-aos-delay="100">
+          <div class="info-box">
+            <i class="bx bx-envelope"></i>
+            <h3>البريد الإلكتروني</h3>
+            <p>info@example.com<br>contact@example.com</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 d-flex" data-aos="fade-up" data-aos-delay="200">
+          <div class="info-box ">
+            <i class="bx bx-phone-call"></i>
+            <h3>اتصل بنا</h3>
+            <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+          </div>
+        </div>
+
+        <div class="col-lg-12" data-aos="fade-up" data-aos-delay="300">
+          <form action="#" method="post" class="php-email-form">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-lg-6 form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="اسمك" required>
+              </div>
+              <div class="col-lg-6 form-group">
+                <input type="email" class="form-control" name="email" id="email" placeholder="البريد الإلكتروني" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="الموضوع" required>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="message" rows="5" placeholder="الرسالة" required></textarea>
+            </div>
+            <div class="my-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+            </div>
+            <div class="text-center"><button type="submit" name="submit">أرسل رسالة</button></div>
+          </form>
+          <!-- <form action="#" method="post" class="php-email-form">
+            {% csrf_token %}
+            <div class="form-floating mb-3" dir="rtl">
+                <input name="name" class="form-control" id="name" type="text" placeholder="Enter your nom..." data-sb-validations="required" required>
+                <label for="name" style="right: 0;">اسمك</label>
+                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+            </div>
+            <div class="form-floating mb-3">
+                <input name="email" class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" required>
+                <label data-i18n="email" for="email" style="right: 0;">البريد الإلكتروني</label>
+                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea name="message" class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required" required></textarea>
+                <label for="message" style="right: 0;">الرسالة</label>
+                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+            </div>
+            <div class="d-none" id="submitSuccessMessage">
+                <div class="text-center mb-3">
+                    <div class="fw-bolder">Form submission successful!</div>
+                    To activate this form, sign up at
+                    <br />
+                    <a href="#"></a>
+                </div>
+            </div>
+            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+            <div align="center">
+                <button class="btn btn-primary btn-xl" id="submitButton" type="submit" name="submit">ارسال</button>
+            </div>
+          </form> -->
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Contact Us Section -->
+
+  {% endblock content %}

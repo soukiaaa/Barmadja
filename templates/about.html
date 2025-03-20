@@ -2,193 +2,93 @@
 {% load static %}
   {% block content %}
 
-  <head>
-    <style>
-      .index-page .header {
-        background-color: #3d4d6a;
-      }
-    </style>
-  </head>
+  <!-- ======= About Us Section ======= -->
+  <section id="about" class="about">
+    <div class="container" data-aos="fade-up">
 
-  <br><br><br>
- <!-- About Section -->
- <section id="about" class="about section">
-    
-    <!-- Section Title -->
-    <div class="container section-title" data-aos="fade-up">
-      <h2>About Us</h2>
-    </div><!-- End Section Title -->
-
-    <div class="container">
-
-      <div class="row gy-4">
-
-        <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua.
-          </p>
-          <ul>
-            <li><i class="bi bi-check2-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-            <li><i class="bi bi-check2-circle"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-            <li><i class="bi bi-check2-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo</span></li>
-          </ul>
+      <div class="row no-gutters">
+        <div class="col-lg-6 video-box">
+          <img src="{% static 'assets/img/about.jpg' %}" class="img-fluid" alt="">
+          <a href="" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
         </div>
 
-        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-          <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-          <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+        <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
+
+          <div class="section-title">
+            <h2>معلومات عنا</h2>
+            <p>نقدم دورات في كل مجالات البرمجة 
+              انشاء و برمجة تطبيقات و مواقع الويب 
+              تعلم الشبكات 
+             لمزيد من التفاصيل يمكنكم مراسلتنا.</p>
+          </div>
+
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon"><i class="bx bx-leaf"></i></div>
+            <h4 class="title"><a href="">أساسيات الإعلام الآلي</a></h4>
+            <p class="description">لا يمكن لأي مبرمج أن يعمل على مشروع تكنولوجي دون أن يعرف كيف يعمل جهازه الخاص، لهذا نقدم دورات كيفية تشخيص المشاكل الجهاز و كيفية العمل على نظام التشغيل والبرامج الأساسية.</p>
+          </div>
+
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon"><i class="bx bx-code"></i></div>
+            <h4 class="title"><a href="">تطوير مهارات البرمجة</a></h4>
+            <p class="description">برمجة تطبيقات الهواتف، تطبيقات الواب و البرامج من خلال مشاريعهم الناشئة ،كما لا ننسى تهيئة الخوادم وكل مايحتاجه المبرمج.</p>
+          </div>
+
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon"><i class="bx bx-briefcase"></i></div>
+            <h4 class="title"><a href="">تسيير مشروعك التكنولوجي</a></h4>
+            <p class="description">
+            الكثير من المبرمجين أو اصحاب المشاريح الناشئة يقعون في الأخطاء الشائعة، فلا توجد دروس متكاملة خاصة ببيئتهم والتي تعطيهم نظرة شاملة عن طريقة إستهداف العملاء، التسويق وغيرها.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End About Us Section -->
+
+  <!-- ======= Counts Section ======= -->
+  <section class="counts section-bg">
+    <div class="container">
+
+      <div class="row aos-init aos-animate" data-aos="fade-up">
+
+        <div class="col-lg-3 col-md-6 text-center" data-aos-delay="100">
+          <div class="count-box">
+            <i class="bi bi-emoji-smile"></i>
+            <span data-purecounter-start="0" data-purecounter-end="{{clients}}" data-purecounter-duration="1" class="purecounter"></span>
+            <p>المتربصون</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6  text-center" data-aos-delay="200">
+          <div class="count-box">
+            <i class="bi bi-youtube"></i>
+            <span data-purecounter-start="0" data-purecounter-end="{{formations}}" data-purecounter-duration="1" class="purecounter"></span>
+            <p>الدورات</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6  text-center" data-aos-delay="400">
+          <div class="count-box">
+            <i class="bi bi-journal-richtext"></i>
+            <span data-purecounter-start="0" data-purecounter-end="{{projectss}}" data-purecounter-duration="1" class="purecounter"></span>
+            <p>المشاريع</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6  text-center" data-aos-delay="600">
+          <div class="count-box">
+            <i class="bi bi-people"></i>
+            <span data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="1" class="purecounter"></span>
+            <p>الدفعات</p>
+          </div>
         </div>
 
       </div>
 
     </div>
+  </section><!-- End Counts Section -->
 
-  </section><!-- /About Section -->
-
-  
-    <!-- Skills Section -->
-    <section id="skills" class="skills section">
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-  
-          <div class="row">
-  
-            <div class="col-lg-6 d-flex align-items-center">
-              <img src="{% static 'assets/img/skills.png' %}" class="img-fluid" alt="">
-            </div>
-  
-            <div class="col-lg-6 pt-4 pt-lg-0 content">
-  
-              <h3>Voluptatem dignissimos provident quasi corporis voluptas</h3>
-              <p class="fst-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-  
-              <div class="skills-content skills-animation">
-  
-                <div class="progress">
-                  <span class="skill"><span>HTML</span> <i class="val">100%</i></span>
-                  <div class="progress-bar-wrap">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div><!-- End Skills Item -->
-  
-                <div class="progress">
-                  <span class="skill"><span>CSS</span> <i class="val">90%</i></span>
-                  <div class="progress-bar-wrap">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div><!-- End Skills Item -->
-  
-                <div class="progress">
-                  <span class="skill"><span>JavaScript</span> <i class="val">75%</i></span>
-                  <div class="progress-bar-wrap">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div><!-- End Skills Item -->
-  
-                <div class="progress">
-                  <span class="skill"><span>Photoshop</span> <i class="val">55%</i></span>
-                  <div class="progress-bar-wrap">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div><!-- End Skills Item -->
-  
-              </div>
-  
-            </div>
-          </div>
-  
-        </div>
-  
-    </section><!-- /Skills Section -->
-
-     <!-- Team Section -->
-     <section id="team" class="team section">
-
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Team</h2>
-          <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-        </div><!-- End Section Title -->
-  
-        <div class="container">
-  
-          <div class="row gy-4">
-  
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-              <div class="team-member d-flex align-items-start">
-                <div class="pic"><img src="{% static 'assets/img/team/team-1.jpg' %}" class="img-fluid" alt=""></div>
-                <div class="member-info">
-                  <h4>Walter White</h4>
-                  <span>Chief Executive Officer</span>
-                  <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
-                  <div class="social">
-                    <a href=""><i class="bi bi-twitter-x"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""> <i class="bi bi-linkedin"></i> </a>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End Team Member -->
-  
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-              <div class="team-member d-flex align-items-start">
-                <div class="pic"><img src="{% static 'assets/img/team/team-2.jpg' %}" class="img-fluid" alt=""></div>
-                <div class="member-info">
-                  <h4>Sarah Jhonson</h4>
-                  <span>Product Manager</span>
-                  <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
-                  <div class="social">
-                    <a href=""><i class="bi bi-twitter-x"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""> <i class="bi bi-linkedin"></i> </a>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End Team Member -->
-  
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-              <div class="team-member d-flex align-items-start">
-                <div class="pic"><img src="{% static 'assets/img/team/team-3.jpg' %}" class="img-fluid" alt=""></div>
-                <div class="member-info">
-                  <h4>William Anderson</h4>
-                  <span>CTO</span>
-                  <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
-                  <div class="social">
-                    <a href=""><i class="bi bi-twitter-x"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""> <i class="bi bi-linkedin"></i> </a>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End Team Member -->
-  
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-              <div class="team-member d-flex align-items-start">
-                <div class="pic"><img src="{% static 'assets/img/team/team-4.jpg' %}" class="img-fluid" alt=""></div>
-                <div class="member-info">
-                  <h4>Amanda Jepson</h4>
-                  <span>Accountant</span>
-                  <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
-                  <div class="social">
-                    <a href=""><i class="bi bi-twitter-x"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""> <i class="bi bi-linkedin"></i> </a>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End Team Member -->
-  
-          </div>
-  
-        </div>
-  
-    </section><!-- /Team Section -->
-
-{% endblock content %}
+  {% endblock content %}

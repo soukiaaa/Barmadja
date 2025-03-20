@@ -29,8 +29,8 @@ class ClientAdmin(admin.ModelAdmin):
 admin.site.register(client, ClientAdmin)
 
 class CustomerAdmin(admin.ModelAdmin):
-    list_display = ('name', 'phone', 'service', 'datec', 'description')
-    list_filter = ('name', 'service', 'datec' )
+    list_display = ('name', 'phone', 'service','type', 'datec', 'description')
+    list_filter = ('name', 'service', 'datec', 'type')
     search_fields = ('name', 'phone')
 admin.site.register(customer, CustomerAdmin)
 
@@ -53,4 +53,13 @@ class ProjectsAdmin(admin.ModelAdmin):
     search_fields = ('title', )
 admin.site.register(projects, ProjectsAdmin)
 
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('datec', 'proj', 'content')
+    list_filter = ('proj', 'datec' )
+admin.site.register(comment, CommentAdmin)
+
+class CustomerPrjAdmin(admin.ModelAdmin):
+    list_display = ('name','phone', 'datec', 'prj', 'description')
+    list_filter = ('prj', 'datec' )
+admin.site.register(customerPrj, CustomerPrjAdmin)
 

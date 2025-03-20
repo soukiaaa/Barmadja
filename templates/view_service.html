@@ -40,26 +40,29 @@
         <h1>الحجز في الخدمة {{vservices.designation}}</h1>
         <br>
         <h2><a href="#">{{vservices.description}}</a></h2>
-        <img src="{{vservices.image.url}}" width="500" style="height: 70vh;" alt="">
+        <img src="{{vservices.image.url}}" width="500" alt="">
       </div>
     </div>
     <!-- End Page Title -->
-    <div align="center" class="col-lg-6 col-md-12 ps-5 pe-5" style="border-radius: 50px; height: 77vh; margin-top: 90px; background-color: #5c768d; color: white;">
+    <div align="center" class="col-lg-6 col-md-12 ps-5 pe-5 mt-5">
         <div class="login-content">
           <form method="post" class="p-4">
               {% csrf_token %}
-              <h2 class="title">التسجــــــيل</h2>
+              <h2 class="title"><a href="">التسجــــــيل</a></h2>
               <div class="input-div d-grid gap-3 m-1">
-                  {% render_field serviceForm.name class="input" id="name" placeholder="الاسم و اللقب" %}
+                  {% render_field serviceForm.name class="form-control" id="name" placeholder="الاسم و اللقب" %}
               </div>
               <div class="input-div d-grid gap-3 m-1">
-                  {% render_field serviceForm.phone class="input" id="phone" placeholder="رقم الهاتف" %}
+                  {% render_field serviceForm.phone class="form-control" id="phone" placeholder="رقم الهاتف" %}
               </div>
               <div class="input-div d-grid gap-3 m-1">
-                {% render_field serviceForm.service class="input" id="service" %}
+                {% render_field serviceForm.type class="form-select" id="type" %}
               </div>
               <div class="input-div d-grid gap-3 m-1">
-                {% render_field serviceForm.description class="input" placeholder="التفاصيل" %}
+                {% render_field serviceForm.service class="form-select" id="service" %}
+              </div>
+              <div class="input-div d-grid gap-3 m-1">
+                {% render_field serviceForm.description class="form-control" placeholder="التفاصيل" %}
               </div>              
               <input type="submit" class="btn" value="ارسال">
           </form>

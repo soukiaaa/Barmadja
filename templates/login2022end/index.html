@@ -40,9 +40,9 @@
 					{% render_field registerForm.isregistred id="isregistred" %}
 					<a href="#" style="margin-right:40px;">أنت مسجل من قبل؟</a>
 				</div>
-				<div class="input-div pass">
-					<a href="#">الدورة</a>
-					{% render_field registerForm.project id="project" style="width:70%; margin-right:40px;" %}
+				<div class="input-group mb-3">
+					<label class="input-group-text" for="inputGroupSelect02">الدورة</label>
+					{% render_field registerForm.project class="form-select" id="inputGroupSelect02"%}
 				</div>
 								
             	<input type="submit" class="btn" value="ارسال">

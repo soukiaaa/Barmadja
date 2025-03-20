@@ -1,0 +1,153 @@
+{% extends 'main.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% block content %}
+
+  <head>
+    <style>
+      .comment-form .btn-comment:hover{
+        background-color: #c4c4c4;
+        color: #f5f6f7;
+      }
+      .btn-comment{
+        position: relative;
+        top: 5px;
+        right: 5px;
+        z-index: 2;
+        background-color: #f5f6f7;
+        color: #c4c4c4;
+        border: 1px solid #f5f6f7;
+      }
+    </style>
+  </head>
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="container">
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="{% url 'store' %}">الصفحة الرئيسية</a></li>
+            <li class="current">تفاصيل المشروع</li>
+          </ol>
+        </nav>
+        <h1>تفاصيل المشروع</h1>
+      </div>
+    </div>
+    <!-- End Page Title -->
+
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper init-swiper">
+
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  }
+                }
+              </script>
+
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide">
+                  <img src="{% static projects.image.url %}" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="{% static projects.image.url %}" alt="">
+                </div>
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            
+            <h2>التعليقات ({{ com.count }})</h2>
+            {% for c in com %}
+              <div>
+                
+                <div class="media-body">
+                  <div class="small-1">
+                    <img class="rounded-circle avatar-sm ms-4" width="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="">
+                    <time class="mr-4 opacity-70 small-3">{{ c.datec }}</time>
+                  </div>
+                  <p class="text-right me-5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ c.content }}</p>
+                </div>
+              </div>
+            {% endfor %}
+            <div class="comment-form sh_data">
+              <div class="form-group">
+                  <!-- <label class="control-label sr-only">اضافة تعليق</label> -->
+                  <form method="post">
+                    {% csrf_token %}
+                      {{form.content}}
+                      <p style="display: none;">{{form.proj}}</p>
+                      <button class="btn btn-comment" id="addcomment" type="submit">إرسال</button>
+                  </form>
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+              <h3>معلومات المشروع</h3>
+              <ul>
+                <li><strong>العنوان</strong>: {{projects.title}}</li>
+                <li><strong>وصف المشروع</strong>: {{projects.description}}</li>
+                <li><strong>السعر</strong>: {{projects.price}}0 دج</li>
+              </ul>
+            </div>
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+              <h2>{{projects.description}}</h2>
+            </div>
+            <div class="reserve" align="center" style="margin-top: 50px;">
+              <a href="" data-toggle="modal" data-target="#Modelorder" class="color-white">أطلب الآن</a>
+            </div>
+          </div>
+
+          <div class="modal" tabindex="-1" role="dialog" id="Modelorder">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <h5 class="modal-title">طلب شراء المشروع</h5>
+                </div>
+                <div align="center" class="modal-body">
+                  <form method="post">
+                    {% csrf_token %}
+                      {% render_field formPrj.name class="form-control  m-2" placeholder="الاسم" %}
+                      {% render_field formPrj.phone class="form-control  m-2" placeholder="رقم الهاتف" %}
+                      {% render_field formPrj.description class="form-control  m-2" placeholder="الوصف" %}
+                    <p style="display: none;">{{formPrj.prj}}</p>
+                    <button type="submit" class="btn btn-primary mt-4">حفظ البيانات</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Details Section -->
+    
+  </main>
+{% endblock content %}
+        
+
+
