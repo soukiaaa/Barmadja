@@ -58,11 +58,6 @@ html5lib==1.1
 hyperlink==21.0.0
 idna==3.6
 incremental==22.10.0
-Kivy==2.3.0
-kivy-deps.glew==0.3.1
-kivy-deps.gstreamer==0.3.3
-kivy-deps.sdl2==0.7.0
-Kivy-Garden==0.1.5
 lxml==4.9.4
 maxminddb==2.5.2
 maxminddb-geolite2==2018.703
@@ -124,4 +119,3 @@ virtualenv==20.24.7
 webencodings==0.5.1
 xhtml2pdf==0.2.13
 zope.interface==6.2
-vercel-python
